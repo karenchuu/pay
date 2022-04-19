@@ -4,25 +4,21 @@ import com.karen.pay.dao.PayInfoMapper;
 import com.karen.pay.enums.PayPlatformEnum;
 import com.karen.pay.pojo.PayInfo;
 import com.karen.pay.service.IPayService;
-import com.lly835.bestpay.config.WxPayConfig;
 import com.lly835.bestpay.enums.BestPayPlatformEnum;
 import com.lly835.bestpay.enums.BestPayTypeEnum;
 import com.lly835.bestpay.enums.OrderStatusEnum;
 import com.lly835.bestpay.model.PayRequest;
 import com.lly835.bestpay.model.PayResponse;
 import com.lly835.bestpay.service.BestPayService;
-import com.lly835.bestpay.service.impl.BestPayServiceImpl;
 import lombok.extern.slf4j.Slf4j;
-import org.simpleframework.xml.Order;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.math.BigDecimal;
 
 @Slf4j
 @Service
-public class PayService implements IPayService {
+public class PayServiceImpl implements IPayService {
 
     @Autowired
     private BestPayService bestPayService;

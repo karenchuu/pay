@@ -7,15 +7,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import java.math.BigDecimal;
 
-import static org.junit.Assert.*;
-
 public class PayServiceTest extends PayApplicationTests {
 
     @Autowired
-    private PayService payService;
+    private PayServiceImpl payServiceImpl;
 
     @Test
     public void create() {
-        payService.create("karen_20220410_002", BigDecimal.valueOf(0.01), BestPayTypeEnum.WXPAY_NATIVE);
+        payServiceImpl.create("karen_20220410_002", BigDecimal.valueOf(0.01), BestPayTypeEnum.WXPAY_NATIVE);
     }
 }

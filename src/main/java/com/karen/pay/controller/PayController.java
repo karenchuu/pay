@@ -1,8 +1,7 @@
 package com.karen.pay.controller;
 
-import com.karen.pay.config.AlipayAccountConfig;
 import com.karen.pay.pojo.PayInfo;
-import com.karen.pay.service.impl.PayService;
+import com.karen.pay.service.impl.PayServiceImpl;
 import com.lly835.bestpay.config.WxPayConfig;
 import com.lly835.bestpay.enums.BestPayTypeEnum;
 import com.lly835.bestpay.model.PayResponse;
@@ -21,7 +20,7 @@ import java.util.Map;
 @Slf4j
 public class PayController {
     @Autowired
-    private PayService payService;
+    private PayServiceImpl payServiceImpl;
 
     @Autowired
     private WxPayConfig wxPayConfig;
@@ -30,7 +29,7 @@ public class PayController {
     public ModelAndView create(@RequestParam("orderId") String orderId,
                                @RequestParam("amount") BigDecimal amount,
                                @RequestParam("payType") BestPayTypeEnum bestPayTypeEnum) {
-        PayResponse response = payService.create(orderId, amount, bestPayTypeEnum);
+        PayResponse response = payServiceImpl.create(orderId, amount, bestPayTypeEnum);
 
         // 支付方式不同，渲染就不同
         // WXPAY_NATIVE 使用 codeUrl，ALIPAY_PC 使用 body
@@ -50,13 +49,13 @@ public class PayController {
     @PostMapping("/notify")
     @ResponseBody
     public String asyncNotify(@RequestBody String notifyData) {
-        return payService.asyncNotify(notifyData);
+        return payServiceImpl.asyncNotify(notifyData);
     }
 
     @GetMapping("/queryByOrderId")
     @ResponseBody
     public PayInfo queryByOrderId(@RequestParam String orderId) {
         log.info("查詢支付紀錄...");
-        return payService.queryByOrderId(orderId);
+        return payServiceImpl.queryByOrderId(orderId);
     }
 }
