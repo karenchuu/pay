@@ -37,6 +37,11 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<!--RabbitMQ-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-amqp</artifactId>
+		</dependency>
 		<!-- https://mvnrepository.com/artifact/cn.springboot/best-pay-sdk -->
 		<dependency>
 			<groupId>cn.springboot</groupId>
@@ -56,6 +61,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
+		<finalName>pay</finalName>
 	</build>
 	<repositories>
 		<repository>
