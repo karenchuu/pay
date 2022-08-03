@@ -50,7 +50,7 @@ public class PayServiceImpl implements IPayService {
 
         PayRequest request = new PayRequest();
         request.setOrderId(orderId);
-        request.setOrderName("微信Native支付測試訂單");
+        request.setOrderName("電商支付測試訂單");
         request.setOrderAmount(amount.doubleValue());
         request.setPayTypeEnum(bestPayTypeEnum);
 
@@ -92,7 +92,7 @@ public class PayServiceImpl implements IPayService {
         // 由pay發送MQ消息，mall接收MQ消息
         amqpTemplate.convertAndSend(QUEUE_PAY_NOTIFY, new Gson().toJson(payInfo));
 
-        // 4. 告訴支付平台不要再通知
+        // 4. 回覆支付平台已經成功收到通知（告訴支付平台不要再通知）
         if (payResponse.getPayPlatformEnum() == BestPayPlatformEnum.WX) {
             return "<xml>\n" +
                     "  <return_code><![CDATA[SUCCESS]]></return_code>\n" +

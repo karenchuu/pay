@@ -18,7 +18,7 @@ public class PayServiceTest extends PayApplicationTests {
 
     @Test
     public void create() {
-        payServiceImpl.create("202206010000003", BigDecimal.valueOf(0.01), BestPayTypeEnum.WXPAY_NATIVE);
+        payServiceImpl.create("1659373636695", BigDecimal.valueOf(0.01), BestPayTypeEnum.WXPAY_NATIVE);
     }
 
     @Test

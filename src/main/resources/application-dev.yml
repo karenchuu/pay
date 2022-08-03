@@ -30,3 +30,9 @@ alipay:
   returnUrl: http://127.0.0.1
 server:
   port: 8082
+thymeleaf:
+  cache: false
+  prefix: classpath:/templates/    # 設定去templates資料夾找html檔案
+  suffix: .html
+  encoding: UTF-8
+  mode: HTML5
