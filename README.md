@@ -2,6 +2,9 @@
 
 > **快速體驗項目**：[DEMO](http://ec2-54-215-191-12.us-west-1.compute.amazonaws.com/) 。
 
+帳號: guest
+
+密碼: guest
 
 ## 項目簡介
 
