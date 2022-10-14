@@ -1,11 +1,5 @@
 # pay
 
-> **快速體驗項目**：[DEMO](http://ec2-54-215-191-12.us-west-1.compute.amazonaws.com/) 。
-
-帳號: guest
-
-密碼: guest
-
 ## 項目簡介
 
 本項目是一套電商平台+通用型支付系統的雙系統項目，基於SpringBoot+MyBatis实现。
